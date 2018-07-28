@@ -1,0 +1,45 @@
+<html> 
+<body> 
+  <canvas width="550" height="200" id="canvas"></canvas> 
+  <script> 
+    var canvas = document.getElementById('canvas'); 
+    var c = canvas.getContext('2d'); 
+    // вырезал с квадратов
+    c.fillStyle = "green"; 
+    c.fillRect(50,100,100,50);
+    c.clearRect(55,105,90,50);
+    c.fillRect(70,50,60,50);
+    c.clearRect(75,55,50,45);
+    //просто прямоугольники
+    c.fillStyle = "red";
+    c.fillRect(180,50,5,100);
+    c.fillRect(180,50,50,5);
+    c.fillRect(180,145,50,5);
+    c.fillRect(180,97,50,5);
+    // линии
+    c.fillStyle = "black";
+    c.beginPath();
+    c.moveTo(260,50);
+    c.lineTo(260,150);
+    c.lineWidth = 5;
+    c.moveTo(260,97);
+    c.lineTo(310,97);
+    c.moveTo(310,50);
+    c.lineTo(310,150);
+    c.moveTo(330,50);
+    c.lineTo(330,150);
+    c.lineTo(380,50);
+    c.lineTo(380,150);
+    c.stroke();
+    // через круги
+	c.beginPath();
+	c.arc(450,100,50, 0.35 * Math.PI, 1.65 * Math.PI, false);
+	c.lineWidth = 10;
+	var lg = c.createLinearGradient(350,50,450,150);
+		lg.addColorStop(0,'yellow');
+		lg.addColorStop(1,'red');
+	c.strokeStyle = lg;                                    
+	c.stroke();
+  </script> 
+</body> 
+</html>
